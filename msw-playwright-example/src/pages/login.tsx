@@ -72,8 +72,8 @@ function LoginComponent() {
           <Button 
             className="w-full" 
             onClick={handleLogin} 
-            disabled={isLoading}
-          >
+            disabled={isLoading || !userId.trim()}
+            >
             {isLoading ? '로그인 중...' : '로그인'}
           </Button>
         </CardContent>
