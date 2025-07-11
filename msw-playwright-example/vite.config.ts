@@ -23,4 +23,7 @@ export default defineConfig({
   },
   cacheDir: '.vite',
   publicDir: 'public',
+  server: {
+    host: true,
+  },
 })
