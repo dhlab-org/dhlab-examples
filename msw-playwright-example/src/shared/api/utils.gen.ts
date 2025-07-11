@@ -1,5 +1,3 @@
-import type { ZodSchema } from 'zod'
-
 export class ZodValidationError extends Error {
   constructor(message: string) {
     super(message);
@@ -7,14 +5,14 @@ export class ZodValidationError extends Error {
   }
 }
 
-export const validateSchema = (schema: ZodSchema | null, data: unknown) => {
+export const validateSchema = (schema: any, data: unknown) => {
   if (!schema) return data;
 
   const result = schema.safeParse(data);
 
   if (!result.success) {
-    const errorMessage = result.error.errors
-      .map((err) => `Path: ${err.path.join('.')} - ${err.message}`)
+    const errorMessage = result.error.issues
+      .map((err: any) => `Path: ${err.path.join('.')} - ${err.message}`)
       .join('\n');
 
     const error = new ZodValidationError(

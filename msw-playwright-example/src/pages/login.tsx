@@ -27,10 +27,9 @@ function LoginComponent() {
     try {
       // 실제 API 호출 시뮬레이션
       await new Promise(resolve => setTimeout(resolve, 1000))
-      
+
       // 임시로 모든 로그인을 성공으로 처리
       localStorage.setItem('userId', userId)
-      toast.success('로그인이 성공했습니다!')
       navigate({ to: '/posts' })
     } catch (error) {
       setShowErrorModal(true)
