@@ -1,5 +1,5 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router'
-import { Fragment } from 'react/jsx-runtime'
+import { TanstackQueryProvider } from '@/app/provider/tanstack-query'
 
 export const Route = createRootRoute({
   component: RootComponent,
@@ -7,9 +7,8 @@ export const Route = createRootRoute({
 
 function RootComponent() {
   return (
-    <Fragment>
-      <div>Hello "__root"!</div>
+    <TanstackQueryProvider>
       <Outlet />
-    </Fragment>
+    </TanstackQueryProvider>
   )
 }

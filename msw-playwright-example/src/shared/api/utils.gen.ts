@@ -1,5 +1,4 @@
-import type { ZodSchema } from 'zod';
-import { IS_DEV } from '../constants/env';
+import type { ZodSchema } from 'zod'
 
 export class ZodValidationError extends Error {
   constructor(message: string) {
@@ -22,8 +21,8 @@ export const validateSchema = (schema: ZodSchema | null, data: unknown) => {
       `❌ Invalid data according to zod schema:\n${errorMessage}\n\n🔍 Received data: ${JSON.stringify(data, null, 2)}`
     );
 
-    if (IS_DEV) {
-      console.error(error);
+    if (import.meta.env.DEV) {
+      console.error(error)
     }
 
     throw error;
