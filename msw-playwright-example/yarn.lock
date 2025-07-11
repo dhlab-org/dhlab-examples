@@ -1069,6 +1069,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tanstack/query-core@npm:5.82.0":
+  version: 5.82.0
+  resolution: "@tanstack/query-core@npm:5.82.0"
+  checksum: 10/1c983c716721d69ee872db21b39b52521448a8939f5aba9772b9b26f9aa17d3f9e80f39feb7e3b114f1181bd26fed5d67fc79b3cb230005855903a1bb63f863c
+  languageName: node
+  linkType: hard
+
+"@tanstack/react-query@npm:^5.82.0":
+  version: 5.82.0
+  resolution: "@tanstack/react-query@npm:5.82.0"
+  dependencies:
+    "@tanstack/query-core": "npm:5.82.0"
+  peerDependencies:
+    react: ^18 || ^19
+  checksum: 10/24835361d67218f9f36ebff1712457070166242d8228fa0ea5023edd4b3dd37aade7a3e538b2362bc67f34cae848f95d2c82ab322c85d20a21fc1378ddd75616
+  languageName: node
+  linkType: hard
+
 "@tanstack/react-router-devtools@npm:^1.127.0":
   version: 1.127.0
   resolution: "@tanstack/react-router-devtools@npm:1.127.0"
@@ -1294,6 +1312,15 @@ __metadata:
   version: 1.0.8
   resolution: "@types/estree@npm:1.0.8"
   checksum: 10/25a4c16a6752538ffde2826c2cc0c6491d90e69cd6187bef4a006dd2c3c45469f049e643d7e516c515f21484dc3d48fd5c870be158a5beb72f5baf3dc43e4099
+  languageName: node
+  linkType: hard
+
+"@types/node@npm:^22.13.5":
+  version: 22.16.3
+  resolution: "@types/node@npm:22.16.3"
+  dependencies:
+    undici-types: "npm:~6.21.0"
+  checksum: 10/b71fe7abf242091e2f303b400b27f677c311b03a3125bf5532e06aff8a4cd41944bcc6f70a0666834e4352228607e676bc8082fa38d3739d3e1460a20d5c51d2
   languageName: node
   linkType: hard
 
@@ -2059,6 +2086,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ky@npm:^1.8.1":
+  version: 1.8.1
+  resolution: "ky@npm:1.8.1"
+  checksum: 10/65c3f8bf545aa11afef9de35676e4199a7e99ef75caf71c1cd3f890c1f13fd704d0329aea347d420b7eb23631d50011db14db8a69916a21a75c60c10b3c94885
+  languageName: node
+  linkType: hard
+
 "lightningcss-darwin-arm64@npm:1.30.1":
   version: 1.30.1
   resolution: "lightningcss-darwin-arm64@npm:1.30.1"
@@ -2320,12 +2354,15 @@ __metadata:
   dependencies:
     "@biomejs/biome": "npm:^2.1.1"
     "@tailwindcss/vite": "npm:^4.1.11"
+    "@tanstack/react-query": "npm:^5.82.0"
     "@tanstack/react-router": "npm:^1.127.0"
     "@tanstack/react-router-devtools": "npm:^1.127.0"
     "@tanstack/router-plugin": "npm:^1.127.0"
+    "@types/node": "npm:^22.13.5"
     "@types/react": "npm:^19.1.8"
     "@types/react-dom": "npm:^19.1.6"
     "@vitejs/plugin-react": "npm:^4.6.0"
+    ky: "npm:^1.8.1"
     react: "npm:^19.1.0"
     react-dom: "npm:^19.1.0"
     tailwindcss: "npm:^4.0.0"
@@ -2908,6 +2945,13 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 10/b9b1e73dabac5dc730c041325dbd9c99467c1b0d239f1b74ec3b90d831384af3e2ba973946232df670519147eb51a2c20f6f96163cea2b359f03de1e2091cc4f
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.21.0":
+  version: 6.21.0
+  resolution: "undici-types@npm:6.21.0"
+  checksum: 10/ec8f41aa4359d50f9b59fa61fe3efce3477cc681908c8f84354d8567bb3701fafdddf36ef6bff307024d3feb42c837cf6f670314ba37fc8145e219560e473d14
   languageName: node
   linkType: hard
 
