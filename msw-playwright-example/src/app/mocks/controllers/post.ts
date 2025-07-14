@@ -1,5 +1,5 @@
 import { faker } from '@faker-js/faker/locale/ko';
-import type { CommentDto } from '@/shared/api/dto';
+import type { CommentDto, PostDto } from '@/shared/api/dto';
 import type { TPostsControllers } from '../__types__/controllers/posts.type';
 
 const COMMENT: CommentDto[] = [
@@ -44,5 +44,29 @@ export const postsController: Partial<TPostsControllers> = {
   },
   getGetPostComments200Response: async () => {
     return COMMENT;
+  },
+
+  getGetPosts200Response: () => {
+    return {
+      items: [...new Array(10).keys()].map((_) => ({
+        id: faker.string.uuid(),
+        title: faker.lorem.words(),
+        content: faker.lorem.words(),
+        userId: faker.string.uuid(),
+        author: {
+          id: faker.string.uuid(),
+          username: faker.person.fullName(),
+          email: faker.internet.email(),
+          createdAt: faker.date.past().toISOString(),
+        },
+        status: faker.helpers.arrayElement(['DRAFT', 'PUBLISHED']),
+        tags: [...new Array(3).keys()].map((_) => faker.lorem.words()),
+        createdAt: faker.date.past().toISOString(),
+        updatedAt: faker.date.past().toISOString(),
+      })) as PostDto[],
+      total: 10,
+      page: 1,
+      totalPages: 1,
+    };
   },
 };

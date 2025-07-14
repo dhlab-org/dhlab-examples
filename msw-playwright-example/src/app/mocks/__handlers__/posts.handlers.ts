@@ -275,28 +275,8 @@ export const postsHandlers = [
   }),
 ];
 
-export function getGetPosts200Response() {
-  return {
-    items: [...new Array(faker.number.int({ min: 1, max: MAX_ARRAY_LENGTH })).keys()].map((_) => ({
-      id: faker.string.uuid(),
-      title: faker.lorem.words(),
-      content: faker.lorem.words(),
-      userId: faker.string.uuid(),
-      author: {
-        id: faker.string.uuid(),
-        username: faker.person.fullName(),
-        email: faker.internet.email(),
-        createdAt: faker.date.past(),
-      },
-      status: faker.helpers.arrayElement(['DRAFT', 'PUBLISHED']),
-      tags: [...new Array(faker.number.int({ min: 1, max: MAX_ARRAY_LENGTH })).keys()].map((_) => faker.lorem.words()),
-      createdAt: faker.date.past(),
-      updatedAt: faker.date.past(),
-    })),
-    total: faker.number.int(),
-    page: faker.number.int(),
-    totalPages: faker.number.int(),
-  };
+export function getGetPosts200Response(info: Parameters<HttpResponseResolver>[0]) {
+  return (controllers as Required<typeof controllers>).getGetPosts200Response(info);
 }
 
 export function getCreatePost201Response() {

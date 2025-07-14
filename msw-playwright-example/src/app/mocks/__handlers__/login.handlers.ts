@@ -5,7 +5,6 @@
 /* eslint-disable */
 /* tslint:disable */
 // @ts-nocheck
-
 import { selectResponseByScenario } from '@dhlab/msw-auto-mock';
 import { faker } from '@faker-js/faker';
 import { bypass, HttpResponse, http, passthrough } from 'msw';
@@ -14,7 +13,6 @@ import { scenarios } from '../scenarios';
 faker.seed(1);
 
 const baseURL = 'https://example.com/api/v1';
-const MAX_ARRAY_LENGTH = 20;
 
 export const loginHandlers = [
   http.post(`${baseURL}/login`, async (info) => {
