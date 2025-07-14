@@ -44,7 +44,7 @@ export const scenarios: TScenarioConfig = {
     description: '존재하지 않는 게시글에 접근했을 때 메시지가 떠야 한다',
     api: {
       '/posts/:id': {
-        GET: { status: 200 },
+        GET: { status: 404 },
       },
     },
   },

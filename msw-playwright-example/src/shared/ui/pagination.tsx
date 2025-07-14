@@ -6,6 +6,7 @@ import { cn } from '@/shared/utils/cn';
 function Pagination({ className, ...props }: React.ComponentProps<'nav'>) {
   return (
     <nav
+      // biome-ignore lint/a11y/noRedundantRoles: shadcn 기본 생성 코드
       role="navigation"
       aria-label="pagination"
       data-slot="pagination"

@@ -34,7 +34,7 @@ export type TPostsControllers = {
 
   getGetPostComments200Response: (
     info: Parameters<HttpResponseResolver<{ postId: string }, null>>[0]
-  ) => null | Promise<null>;
+  ) => CommentDto[] | Promise<CommentDto[]>;
 
   getCreateComment201Response: (
     info: Parameters<HttpResponseResolver<{ postId: string }, CommentInputDto>>[0]

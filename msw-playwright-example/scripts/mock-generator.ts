@@ -1,6 +1,7 @@
 import { createRequire } from 'node:module';
 import type { TOptions } from '@dhlab/msw-auto-mock';
 import type { TControllers } from '../src/app/mocks/__types__/controllers/index';
+import { controllers } from '../src/app/mocks/controllers';
 
 const require = createRequire(import.meta.url);
 const { generateMocks } = require('@dhlab/msw-auto-mock/node');
@@ -10,7 +11,7 @@ async function autoGenerateMocks() {
     console.log('[MSW] 목 파일 생성 시작...');
 
     const options: TOptions<TControllers> = {
-      // controllers,
+      controllers,
       input: './swagger/openapi.yml',
       outputDir: './src/app/mocks',
       environment: 'react',

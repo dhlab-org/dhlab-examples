@@ -8,13 +8,14 @@
 
 import { selectResponseByScenario } from '@dhlab/msw-auto-mock';
 import { faker } from '@faker-js/faker';
-import { bypass, HttpResponse, http, passthrough } from 'msw';
+import { bypass, HttpResponse, type HttpResponseResolver, http, passthrough } from 'msw';
+import { controllers } from '@/app/mocks/controllers';
 import { scenarios } from '../scenarios';
 
 faker.seed(1);
 
 const baseURL = 'https://example.com/api/v1';
-const MAX_ARRAY_LENGTH = 20;
+const MAX_ARRAY_LENGTH = 10;
 
 export const postsHandlers = [
   http.get(`${baseURL}/posts`, async (info) => {
@@ -274,19 +275,12 @@ export const postsHandlers = [
   }),
 ];
 
-export function getGetPosts200Response(info: any) {
-  const url = new URL(info.request.url);
-  const page = parseInt(url.searchParams.get('page') || '1');
-  const limit = parseInt(url.searchParams.get('limit') || '10');
-
-  const totalItems = 25; // 전체 게시글 수
-  const totalPages = Math.ceil(totalItems / limit);
-
+export function getGetPosts200Response() {
   return {
-    items: [...new Array(Math.min(limit, totalItems - (page - 1) * limit)).keys()].map(() => ({
+    items: [...new Array(10).keys()].map((_) => ({
       id: faker.string.uuid(),
-      title: faker.lorem.sentence({ min: 3, max: 8 }),
-      content: faker.lorem.paragraphs({ min: 2, max: 4 }),
+      title: faker.lorem.words(),
+      content: faker.lorem.words(),
       userId: faker.string.uuid(),
       author: {
         id: faker.string.uuid(),
@@ -295,13 +289,13 @@ export function getGetPosts200Response(info: any) {
         createdAt: faker.date.past(),
       },
       status: faker.helpers.arrayElement(['DRAFT', 'PUBLISHED']),
-      tags: [...new Array(faker.number.int({ min: 1, max: 3 })).keys()].map((_) => faker.lorem.word()),
+      tags: [...new Array(3).keys()].map((_) => faker.lorem.words()),
       createdAt: faker.date.past(),
       updatedAt: faker.date.past(),
     })),
-    total: totalItems,
-    page: page,
-    totalPages: totalPages,
+    total: 10,
+    page: 1,
+    totalPages: 1,
   };
 }
 
@@ -362,36 +356,10 @@ export function getUpdatePost200Response() {
   };
 }
 
-export function getGetPostComments200Response() {
-  return [...new Array(faker.number.int({ min: 1, max: MAX_ARRAY_LENGTH })).keys()].map((_) => ({
-    id: faker.string.uuid(),
-    content: faker.lorem.words(),
-    userId: faker.string.uuid(),
-    postId: faker.string.uuid(),
-    author: {
-      id: faker.string.uuid(),
-      username: faker.person.fullName(),
-      email: faker.internet.email(),
-      createdAt: faker.date.past(),
-    },
-    createdAt: faker.date.past(),
-    updatedAt: faker.date.past(),
-  }));
+export function getGetPostComments200Response(info: Parameters<HttpResponseResolver>[0]) {
+  return (controllers as Required<typeof controllers>).getGetPostComments200Response(info);
 }
 
-export function getCreateComment201Response() {
-  return {
-    id: faker.string.uuid(),
-    content: faker.lorem.words(),
-    userId: faker.string.uuid(),
-    postId: faker.string.uuid(),
-    author: {
-      id: faker.string.uuid(),
-      username: faker.person.fullName(),
-      email: faker.internet.email(),
-      createdAt: faker.date.past(),
-    },
-    createdAt: faker.date.past(),
-    updatedAt: faker.date.past(),
-  };
+export function getCreateComment201Response(info: Parameters<HttpResponseResolver>[0]) {
+  return (controllers as Required<typeof controllers>).getCreateComment201Response(info);
 }

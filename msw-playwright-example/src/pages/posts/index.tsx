@@ -63,6 +63,8 @@ function PostsListComponent() {
     );
   }
 
+  console.log(postsResponse);
+
   const posts = postsResponse?.items || [];
   const totalPages = postsResponse?.totalPages || 1;
 
