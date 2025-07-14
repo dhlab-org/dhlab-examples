@@ -39,6 +39,8 @@
     "@dhlab/e2e-autogen": "^0.1.0",
     "@dhlab/msw-auto-mock": "^0.1.1",
     "@faker-js/faker": "^9.9.0",
+    "@msw/playwright": "^0.4.2",
+    "@playwright/test": "^1.54.1",
     "@tailwindcss/vite": "^4.1.11",
     "@tanstack/router-plugin": "^1.127.0",
     "@types/node": "^22.13.5",
