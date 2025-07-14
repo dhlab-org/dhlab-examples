@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.1.1",
+    "@dhlab/e2e-autogen": "^0.1.0",
     "@dhlab/msw-auto-mock": "^0.1.1",
     "@faker-js/faker": "^9.9.0",
     "@tailwindcss/vite": "^4.1.11",
