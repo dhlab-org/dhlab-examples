@@ -1,8 +1,7 @@
-import { validateSchema } from '@/shared/api/utils.gen';
 import type { KyInstance, Options } from 'ky';
-
 import type { CommentDto, CommentInputDto } from '@/shared/api/dto';
 import { commentDtoSchema, commentInputDtoSchema } from '@/shared/api/schema.gen';
+import { validateSchema } from '@/shared/api/utils.gen';
 
 export class CommentsApi {
   private readonly instance: KyInstance;
@@ -59,12 +58,7 @@ export class CommentsApi {
    * @summary Update comment
    * @request PUT:/comments/{id}
    */
-  async putCommentsById(
-    id: string,
-    data: CommentInputDto,
-    kyInstance?: KyInstance,
-    options?: Omit<Options, 'json'>
-  ) {
+  async putCommentsById(id: string, data: CommentInputDto, kyInstance?: KyInstance, options?: Omit<Options, 'json'>) {
     await validateSchema(commentInputDtoSchema, data);
     const instance = kyInstance ?? this.instance;
 

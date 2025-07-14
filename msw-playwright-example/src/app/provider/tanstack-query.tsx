@@ -1,12 +1,7 @@
-import type { PropsWithChildren } from 'react';
-
-import { ZodValidationError } from '@/shared/api/utils.gen';
-import {
-  MutationCache,
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query';
+import { MutationCache, QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { HTTPError } from 'ky';
+import type { PropsWithChildren } from 'react';
+import { ZodValidationError } from '@/shared/api/utils.gen';
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -36,9 +31,5 @@ export const queryClient = new QueryClient({
 });
 
 export const TanstackQueryProvider = ({ children }: PropsWithChildren) => {
-  return (
-    <QueryClientProvider client={queryClient}>
-      {children}
-    </QueryClientProvider>
-  );
+  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>;
 };

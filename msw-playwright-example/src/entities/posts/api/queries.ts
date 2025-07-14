@@ -63,7 +63,7 @@ export const useGetPostsQuery = <
  * @summary Get post by ID
  * @request GET:/posts/{id}*
  */
-export const useGetPostsByIdQuery = <TData = PostDto,>(
+export const useGetPostsByIdQuery = <TData = PostDto>(
   id: string,
   options?: Omit<UseQueryOptions<PostDto, DefaultError, TData>, 'queryKey' | 'queryFn'>
 ) => {
@@ -113,7 +113,7 @@ export const useGetPostsSuspenseQuery = <
  * @summary Get post by ID
  * @request GET:/posts/{id}*
  */
-export const useGetPostsByIdSuspenseQuery = <TData = PostDto,>(
+export const useGetPostsByIdSuspenseQuery = <TData = PostDto>(
   id: string,
   options?: Omit<UseSuspenseQueryOptions<PostDto, DefaultError, TData>, 'queryKey' | 'queryFn'>
 ) => {

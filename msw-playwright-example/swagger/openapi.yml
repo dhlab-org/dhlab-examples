@@ -4,10 +4,35 @@ info:
   description: API for managing blog posts, comments and users
   version: 1.0.0
 servers:
-  - url: http://localhost:3000/api
+  - url: https://example.com/api/v1
     description: Local development server
 
 paths:
+  /login:
+    post:
+      tags:
+        - auth
+      summary: User login
+      description: Authenticate user by userId and return user information
+      operationId: login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginInput"
+      responses:
+        "200":
+          description: Login successful
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/User"
+        "401":
+          description: User not found
+        "400":
+          description: Invalid input
+
   /users:
     get:
       tags:
@@ -307,6 +332,16 @@ paths:
 
 components:
   schemas:
+    LoginInput:
+      type: object
+      title: LoginInput
+      properties:
+        userId:
+          type: string
+          minLength: 1
+      required:
+        - userId
+
     User:
       type: object
       title: User

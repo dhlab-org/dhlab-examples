@@ -1,9 +1,7 @@
 import type { DefaultError, UseMutationOptions } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
-
-import type { UserDto, UserInputDto } from '@/shared/api/dto';
-
 import type { KyInstance, Options } from 'ky';
+import type { UserDto, UserInputDto } from '@/shared/api/dto';
 import { usersApi } from './instance';
 
 export const USERS_MUTATION_KEY = {
@@ -28,10 +26,7 @@ export { mutations as usersMutations };
  * @request POST:/users
  */
 export const usePostUsersMutation = (
-  options?: Omit<
-    UseMutationOptions<UserDto, DefaultError, TPostUsersVariables>,
-    'mutationFn' | 'mutationKey'
-  >
+  options?: Omit<UseMutationOptions<UserDto, DefaultError, TPostUsersVariables>, 'mutationFn' | 'mutationKey'>
 ) => {
   return useMutation({
     ...mutations.postUsers(),

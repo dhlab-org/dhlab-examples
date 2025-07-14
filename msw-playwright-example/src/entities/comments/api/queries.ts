@@ -24,7 +24,7 @@ export { queries as commentsQueries };
  * @summary Get post comments
  * @request GET:/posts/{postId}/comments*
  */
-export const useGetPostsByPostIdCommentsQuery = <TData = CommentDto[],>(
+export const useGetPostsByPostIdCommentsQuery = <TData = CommentDto[]>(
   postId: string,
   options?: Omit<UseQueryOptions<CommentDto[], DefaultError, TData>, 'queryKey' | 'queryFn'>
 ) => {
@@ -40,7 +40,7 @@ export const useGetPostsByPostIdCommentsQuery = <TData = CommentDto[],>(
  * @summary Get post comments
  * @request GET:/posts/{postId}/comments*
  */
-export const useGetPostsByPostIdCommentsSuspenseQuery = <TData = CommentDto[],>(
+export const useGetPostsByPostIdCommentsSuspenseQuery = <TData = CommentDto[]>(
   postId: string,
   options?: Omit<UseSuspenseQueryOptions<CommentDto[], DefaultError, TData>, 'queryKey' | 'queryFn'>
 ) => {

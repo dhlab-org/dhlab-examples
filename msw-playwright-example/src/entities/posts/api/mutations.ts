@@ -1,9 +1,7 @@
 import type { DefaultError, UseMutationOptions } from '@tanstack/react-query';
 import { useMutation } from '@tanstack/react-query';
-
-import type { PostDto, PostInputDto } from '@/shared/api/dto';
-
 import type { KyInstance, Options } from 'ky';
+import type { PostDto, PostInputDto } from '@/shared/api/dto';
 import { postsApi } from './instance';
 
 export const POSTS_MUTATION_KEY = {
@@ -44,10 +42,7 @@ export { mutations as postsMutations };
  * @request POST:/posts
  */
 export const usePostPostsMutation = (
-  options?: Omit<
-    UseMutationOptions<PostDto, DefaultError, TPostPostsVariables>,
-    'mutationFn' | 'mutationKey'
-  >
+  options?: Omit<UseMutationOptions<PostDto, DefaultError, TPostPostsVariables>, 'mutationFn' | 'mutationKey'>
 ) => {
   return useMutation({
     ...mutations.postPosts(),
@@ -61,10 +56,7 @@ export const usePostPostsMutation = (
  * @request PUT:/posts/{id}
  */
 export const usePutPostsByIdMutation = (
-  options?: Omit<
-    UseMutationOptions<PostDto, DefaultError, TPutPostsByIdVariables>,
-    'mutationFn' | 'mutationKey'
-  >
+  options?: Omit<UseMutationOptions<PostDto, DefaultError, TPutPostsByIdVariables>, 'mutationFn' | 'mutationKey'>
 ) => {
   return useMutation({
     ...mutations.putPostsById(),
@@ -78,10 +70,7 @@ export const usePutPostsByIdMutation = (
  * @request DELETE:/posts/{id}
  */
 export const useDeletePostsByIdMutation = (
-  options?: Omit<
-    UseMutationOptions<void, DefaultError, TDeletePostsByIdVariables>,
-    'mutationFn' | 'mutationKey'
-  >
+  options?: Omit<UseMutationOptions<void, DefaultError, TDeletePostsByIdVariables>, 'mutationFn' | 'mutationKey'>
 ) => {
   return useMutation({
     ...mutations.deletePostsById(),

@@ -1,3 +1,9 @@
+/** LoginInput */
+export type LoginInputDto = {
+  /** @minLength 1 */
+  userId: string;
+};
+
 /** User */
 export type UserDto = {
   /** @format uuid */

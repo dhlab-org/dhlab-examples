@@ -1,8 +1,7 @@
-import { validateSchema } from '@/shared/api/utils.gen';
 import type { KyInstance, Options } from 'ky';
-
 import type { UserDto, UserInputDto } from '@/shared/api/dto';
 import { userDtoSchema, userInputDtoSchema } from '@/shared/api/schema.gen';
+import { validateSchema } from '@/shared/api/utils.gen';
 
 export class UsersApi {
   private readonly instance: KyInstance;

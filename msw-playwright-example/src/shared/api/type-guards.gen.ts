@@ -2,6 +2,7 @@ import type {
   CommentDto,
   CommentInputDto,
   GetPostsQueryParams,
+  LoginInputDto,
   OrderDto,
   OrderInputDto,
   OrderItemDto,
@@ -16,6 +17,7 @@ import {
   commentDtoSchema,
   commentInputDtoSchema,
   getPostsQueryParamsSchema,
+  loginInputDtoSchema,
   orderDtoSchema,
   orderInputDtoSchema,
   orderItemDtoSchema,
@@ -26,6 +28,10 @@ import {
   userDtoSchema,
   userInputDtoSchema,
 } from './schema.gen';
+
+export const isLoginInputDto = (data: unknown): data is LoginInputDto => {
+  return loginInputDtoSchema.safeParse(data).success;
+};
 
 export const isUserDto = (data: unknown): data is UserDto => {
   return userDtoSchema.safeParse(data).success;

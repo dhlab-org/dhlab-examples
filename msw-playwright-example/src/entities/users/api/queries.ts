@@ -29,7 +29,7 @@ export { queries as usersQueries };
  * @summary Get all users
  * @request GET:/users*
  */
-export const useGetUsersQuery = <TData = UserDto[],>(
+export const useGetUsersQuery = <TData = UserDto[]>(
   options?: Omit<UseQueryOptions<UserDto[], DefaultError, TData>, 'queryKey' | 'queryFn'>
 ) => {
   return useQuery({
@@ -43,7 +43,7 @@ export const useGetUsersQuery = <TData = UserDto[],>(
  * @summary Get user by ID
  * @request GET:/users/{id}*
  */
-export const useGetUsersByIdQuery = <TData = UserDto,>(
+export const useGetUsersByIdQuery = <TData = UserDto>(
   id: string,
   options?: Omit<UseQueryOptions<UserDto, DefaultError, TData>, 'queryKey' | 'queryFn'>
 ) => {
@@ -59,7 +59,7 @@ export const useGetUsersByIdQuery = <TData = UserDto,>(
  * @summary Get all users
  * @request GET:/users*
  */
-export const useGetUsersSuspenseQuery = <TData = UserDto[],>(
+export const useGetUsersSuspenseQuery = <TData = UserDto[]>(
   options?: Omit<UseSuspenseQueryOptions<UserDto[], DefaultError, TData>, 'queryKey' | 'queryFn'>
 ) => {
   return useSuspenseQuery({
@@ -73,7 +73,7 @@ export const useGetUsersSuspenseQuery = <TData = UserDto[],>(
  * @summary Get user by ID
  * @request GET:/users/{id}*
  */
-export const useGetUsersByIdSuspenseQuery = <TData = UserDto,>(
+export const useGetUsersByIdSuspenseQuery = <TData = UserDto>(
   id: string,
   options?: Omit<UseSuspenseQueryOptions<UserDto, DefaultError, TData>, 'queryKey' | 'queryFn'>
 ) => {
