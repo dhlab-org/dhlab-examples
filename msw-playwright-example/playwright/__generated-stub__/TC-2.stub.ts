@@ -5,7 +5,7 @@ import { test } from "@playwright/test";
 
 test.skip("[TC-2.1] 게시글 목록 > 게시글 조회 성공", async ({ page }) => {
   await test.step.skip("[TC-2.1.1] 게시글 목록 페이지 로드 -> 제목(블로그 포스트)이 표시되어야 한다", async () => {
-      // 📍 UI Path: /
+      // 📍 UI Path: /posts
 
       // 🎬 When: 게시글 목록 페이지 로드
     
@@ -13,10 +13,10 @@ test.skip("[TC-2.1] 게시글 목록 > 게시글 조회 성공", async ({ page }
 
     });
 
-  await test.step.skip("[TC-2.1.2] 게시글이 5개 이상 표시되어야 한다", async () => {
+  await test.step.skip("[TC-2.1.2] 게시글이 1개 이상 표시되어야 한다", async () => {
       
           
-      // ✅ Then: 게시글이 5개 이상 표시되어야 한다
+      // ✅ Then: 게시글이 1개 이상 표시되어야 한다
 
     });
 
@@ -31,12 +31,12 @@ test.skip("[TC-2.1] 게시글 목록 > 게시글 조회 성공", async ({ page }
 });
 
 test.skip("[TC-2.2] 존재하지 않는 게시글에 접근했을 때 메시지가 떠야 한다", async ({ page }) => {
-  await test.step.skip("[TC-2.2.1] 존재하지 않는 게시글 url 접근 -> 메시지(존재하지 않는 게시글입니다)가 떠야 한다", async () => {
+  await test.step.skip("[TC-2.2.1] 존재하지 않는 게시글 url 접근 -> 메시지(게시글을 찾을 수 없습니다)가 떠야 한다", async () => {
       // 📍 UI Path: /:postId
 
       // 🎬 When: 존재하지 않는 게시글 url 접근
     
-      // ✅ Then: 메시지(존재하지 않는 게시글입니다)가 떠야 한다
+      // ✅ Then: 메시지(게시글을 찾을 수 없습니다)가 떠야 한다
 
     });
 });
