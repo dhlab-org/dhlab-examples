@@ -2,9 +2,14 @@ import type { HttpResponseResolver } from 'msw';
 import type { CommentDto, CommentInputDto, PostDto, PostInputDto } from '@/shared/api/dto';
 
 export type TPostsControllers = {
-  getGetPosts200Response: (
-    info: Parameters<HttpResponseResolver<Record<string, never>, null>>[0]
-  ) => null | Promise<null>;
+  getGetPosts200Response: (info: Parameters<HttpResponseResolver<Record<string, never>, null>>[0]) =>
+    | { items: PostDto[]; total: number; page: number; totalPages: number }
+    | Promise<{
+        items: PostDto[];
+        total: number;
+        page: number;
+        totalPages: number;
+      }>;
 
   getCreatePost201Response: (
     info: Parameters<HttpResponseResolver<Record<string, never>, PostInputDto>>[0]

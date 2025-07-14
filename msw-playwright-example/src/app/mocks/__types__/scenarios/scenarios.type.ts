@@ -7,13 +7,13 @@
 // @ts-nocheck
 
 export type TApiEndpoints = {
-  '/login': 'POST';
-  '/users': 'GET' | 'POST';
-  '/users/:id': 'GET';
-  '/posts': 'GET' | 'POST';
-  '/posts/:id': 'GET' | 'PUT' | 'DELETE';
-  '/posts/:postId/comments': 'GET' | 'POST';
-  '/comments/:id': 'PUT' | 'DELETE';
+  "/login": "POST";
+  "/users": "GET" | "POST";
+  "/users/:id": "GET";
+  "/posts": "GET" | "POST";
+  "/posts/:id": "GET" | "PUT" | "DELETE";
+  "/posts/:postId/comments": "GET" | "POST";
+  "/comments/:id": "PUT" | "DELETE";
 };
 
 export type TApiPaths = keyof TApiEndpoints;
@@ -21,30 +21,30 @@ export type TApiPaths = keyof TApiEndpoints;
 export type TApiMethods<T extends TApiPaths> = TApiEndpoints[T];
 
 export type TApiStatusCodes = {
-  '/login': {
+  "/login": {
     POST: 200 | 400 | 401;
   };
-  '/users': {
+  "/users": {
     GET: 200;
     POST: 201 | 400;
   };
-  '/users/:id': {
+  "/users/:id": {
     GET: 200 | 404;
   };
-  '/posts': {
+  "/posts": {
     GET: 200;
     POST: 201 | 400;
   };
-  '/posts/:id': {
+  "/posts/:id": {
     GET: 200 | 404;
     PUT: 200 | 404;
     DELETE: 204 | 404;
   };
-  '/posts/:postId/comments': {
+  "/posts/:postId/comments": {
     GET: 200;
     POST: 201 | 404;
   };
-  '/comments/:id': {
+  "/comments/:id": {
     PUT: 200 | 404;
     DELETE: 204 | 404;
   };

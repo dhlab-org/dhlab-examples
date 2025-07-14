@@ -5,7 +5,6 @@
 /* eslint-disable */
 /* tslint:disable */
 // @ts-nocheck
-
 import { selectResponseByScenario } from '@dhlab/msw-auto-mock';
 import { faker } from '@faker-js/faker';
 import { bypass, HttpResponse, http, passthrough } from 'msw';

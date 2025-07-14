@@ -15,7 +15,7 @@ import { scenarios } from '../scenarios';
 faker.seed(1);
 
 const baseURL = 'https://example.com/api/v1';
-const MAX_ARRAY_LENGTH = 10;
+const MAX_ARRAY_LENGTH = 20;
 
 export const postsHandlers = [
   http.get(`${baseURL}/posts`, async (info) => {
@@ -277,7 +277,7 @@ export const postsHandlers = [
 
 export function getGetPosts200Response() {
   return {
-    items: [...new Array(10).keys()].map((_) => ({
+    items: [...new Array(faker.number.int({ min: 1, max: MAX_ARRAY_LENGTH })).keys()].map((_) => ({
       id: faker.string.uuid(),
       title: faker.lorem.words(),
       content: faker.lorem.words(),
@@ -289,13 +289,13 @@ export function getGetPosts200Response() {
         createdAt: faker.date.past(),
       },
       status: faker.helpers.arrayElement(['DRAFT', 'PUBLISHED']),
-      tags: [...new Array(3).keys()].map((_) => faker.lorem.words()),
+      tags: [...new Array(faker.number.int({ min: 1, max: MAX_ARRAY_LENGTH })).keys()].map((_) => faker.lorem.words()),
       createdAt: faker.date.past(),
       updatedAt: faker.date.past(),
     })),
-    total: 10,
-    page: 1,
-    totalPages: 1,
+    total: faker.number.int(),
+    page: faker.number.int(),
+    totalPages: faker.number.int(),
   };
 }
 
