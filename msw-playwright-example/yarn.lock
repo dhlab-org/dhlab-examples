@@ -512,9 +512,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dhlab/msw-auto-mock@npm:^0.1.0":
-  version: 0.1.0
-  resolution: "@dhlab/msw-auto-mock@npm:0.1.0"
+"@dhlab/msw-auto-mock@npm:^0.1.1":
+  version: 0.1.1
+  resolution: "@dhlab/msw-auto-mock@npm:0.1.1"
   dependencies:
     "@apidevtools/swagger-parser": "npm:10.1.0"
     cac: "npm:6.7.14"
@@ -525,7 +525,7 @@ __metadata:
   peerDependencies:
     "@faker-js/faker": ">=8"
     msw: ">=2"
-  checksum: 10/f7c2cef160ac2fd037e0306bc29e39b91244e0edcc90fb86081c4795e6a93f7816e8e97df9fed6440de783962574631d9f86c9259138ba64cd25ecfb3d567bb2
+  checksum: 10/400be5e96414bf89f703b1e04ecefc5612c48e78c4d4b889538322c89a3f557201a1daf30a963b826d98064c2576a778616670a09fe0c7bb4664abccd68051a3
   languageName: node
   linkType: hard
 
@@ -3111,7 +3111,7 @@ __metadata:
   resolution: "msw-playwright-example@workspace:."
   dependencies:
     "@biomejs/biome": "npm:^2.1.1"
-    "@dhlab/msw-auto-mock": "npm:^0.1.0"
+    "@dhlab/msw-auto-mock": "npm:^0.1.1"
     "@faker-js/faker": "npm:^9.9.0"
     "@hookform/resolvers": "npm:^5.1.1"
     "@radix-ui/react-dialog": "npm:^1.1.14"
