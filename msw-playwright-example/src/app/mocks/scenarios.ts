@@ -13,32 +13,55 @@ import type { TScenarioConfig } from './__types__/scenarios/scenarios.type';
  * allowCustomStatus: true를 사용하면 OpenAPI 명세에 없는 status 코드도 사용 가능합니다.
  */
 export const scenarios: TScenarioConfig = {
-  // 예시 시나리오들 (필요에 따라 수정/추가)
   'TC-1.1': {
-    description: '성공 시나리오',
+    description: '유저 ID를 입력하면 로그인되어야 한다',
     api: {
-      // "/users": {
-      //   "GET": { status: 200 },
-      //   "POST": { status: 201 }
-      // },
-      // "/users/{id}": {
-      //   "GET": { status: 200 },
-      //   "PUT": { status: 200 },
-      //   "DELETE": { status: 204 }
-      // }
+      '/login': {
+        POST: { status: 200 },
+      },
     },
   },
   'TC-1.2': {
-    description: '오류 시나리오',
+    description: '존재하지 않는 id로 로그인을 시도하는 경우 실패 모달이 떠야 한다',
     api: {
-      // "/users": {
-      //   "GET": { status: 500 },
-      //   "POST": { status: 400 }
-      // },
-      // 커스텀 status 코드 사용 예시
-      // "/users/:id": {
-      //   "GET": { status: 418, allowCustomStatus: true }
-      // }
+      '/login': {
+        POST: { status: 400 },
+      },
+    },
+  },
+  'TC-2.1': {
+    description: '게시글 목록 > 게시글 조회 성공',
+    api: {
+      '/posts': {
+        GET: { status: 200 },
+      },
+      '/posts/:id': {
+        GET: { status: 200 },
+      },
+    },
+  },
+  'TC-2.2': {
+    description: '존재하지 않는 게시글에 접근했을 때 메시지가 떠야 한다',
+    api: {
+      '/posts/:id': {
+        GET: { status: 200 },
+      },
+    },
+  },
+  'TC-3.1': {
+    description: '댓글 작성 성공',
+    api: {
+      '/posts/:postId/comments': {
+        GET: { status: 200 },
+      },
+    },
+  },
+  'TC-3.2': {
+    description: '댓글 작성 실패',
+    api: {
+      '/posts/:postId/comments': {
+        POST: { status: 500, allowCustomStatus: true },
+      },
     },
   },
 };
