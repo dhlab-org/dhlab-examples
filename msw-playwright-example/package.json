@@ -10,7 +10,9 @@
     "lint:fix": "biome check --write .",
     "format": "biome format --write .",
     "preview": "vite preview",
-    "generate-msw": "tsx scripts/mock-generator.ts"
+    "generate-msw": "tsx scripts/mock-generator.ts",
+    "e2e-autogen:generate": "e2e-autogen generate --sheets https://docs.google.com/spreadsheets/d/1AuqnVaipoquSgNYHCVEySgHdWZNErCBke40rcXPv9RY/edit --output ./playwright/__generated-stub__",
+    "e2e-autogen:update": "e2e-autogen update --sheets https://docs.google.com/spreadsheets/d/1AuqnVaipoquSgNYHCVEySgHdWZNErCBke40rcXPv9RY/edit --results ./playwright/reporters/results.json"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
