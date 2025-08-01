@@ -512,9 +512,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@dhlab/e2e-autogen@npm:^0.1.4":
-  version: 0.1.4
-  resolution: "@dhlab/e2e-autogen@npm:0.1.4"
+"@dhlab/e2e-autogen@npm:^0.1.6":
+  version: 0.1.6
+  resolution: "@dhlab/e2e-autogen@npm:0.1.6"
   dependencies:
     chalk: "npm:^4.1.2"
     fs-extra: "npm:^11.1.1"
@@ -524,7 +524,7 @@ __metadata:
     tsx: "npm:^4.6.0"
   peerDependencies:
     "@msw/playwright": ^0.4.2
-    "@playwright/test": ">=1.30.0"
+    "@playwright/test": ^1.52.0
     detox: ">=20.0.0"
   peerDependenciesMeta:
     "@msw/playwright":
@@ -535,7 +535,7 @@ __metadata:
       optional: true
   bin:
     e2e-autogen: dist/core/cli.cjs
-  checksum: 10/5c9f0fd7a6663e188b970184a587eb7c53a31ee8c8b4bbf0c72e8eab54085b23e1511fefb2d130d54425e00d1b5359fd10edee109fcf688222e4e3ca307ab9cf
+  checksum: 10/10f56c1e1a3443ad06a85e47cffe9b6112a4bfbfe3903beb97d1fc5ad7e17acb624e8b6156a355ba53a58764e21368b30a0801a278e4d08ccbe84e3affdc26b2
   languageName: node
   linkType: hard
 
@@ -3621,7 +3621,7 @@ __metadata:
   resolution: "msw-playwright-example@workspace:."
   dependencies:
     "@biomejs/biome": "npm:^2.1.1"
-    "@dhlab/e2e-autogen": "npm:^0.1.4"
+    "@dhlab/e2e-autogen": "npm:^0.1.6"
     "@dhlab/msw-auto-mock": "npm:^0.1.1"
     "@faker-js/faker": "npm:^9.9.0"
     "@hookform/resolvers": "npm:^5.1.1"

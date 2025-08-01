@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.1.1",
-    "@dhlab/e2e-autogen": "^0.1.4",
+    "@dhlab/e2e-autogen": "^0.1.6",
     "@dhlab/msw-auto-mock": "^0.1.1",
     "@faker-js/faker": "^9.9.0",
     "@msw/playwright": "^0.4.2",

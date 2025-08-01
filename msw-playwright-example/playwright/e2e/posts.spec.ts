@@ -1,5 +1,5 @@
+import { test } from "@dhlab/e2e-autogen/playwright";
 import { expect } from "@playwright/test";
-import { scenarioTest as test } from "../fixture";
 
 test.describe("게시글 목록", () => {
   test.beforeEach(async ({ page }) => {

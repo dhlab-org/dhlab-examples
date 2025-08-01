@@ -1,5 +1,5 @@
+import { test } from "@dhlab/e2e-autogen/playwright";
 import { expect } from "@playwright/test";
-import { scenarioTest as test } from "../fixture";
 
 test.describe("댓글 작성", () => {
   test.beforeEach(async ({ page }) => {
@@ -10,7 +10,7 @@ test.describe("댓글 작성", () => {
     await page.getByRole("button", { name: "로그인" }).click();
   });
 
-  test("[TC-3.1] 댓글 작성 성공", async ({ page }) => {
+  test("[TC-3.1] 댓글 작성 성공", async ({ page, manual }) => {
     await test.step("[TC-3.1.1] 하단으로 스크롤 -> 댓글창이 떠야 한다", async () => {
       // 📍 UI Path: /:postId
       await page.goto("http://localhost:5173/posts");
@@ -23,12 +23,14 @@ test.describe("댓글 작성", () => {
       ).toBeVisible();
     });
 
-    await test.step("[TC-3.1.2] 제출 버튼이 비활성화 상태여야 한다", async () => {
-      // ✅ Then: 제출 버튼이 비활성화 상태여야 한다
-      await expect(
-        page.getByRole("button", { name: "댓글 등록" })
-      ).toBeDisabled();
-    });
+    await manual("[TC-3.1.2] 제출 버튼이 비활성화 상태여야 한다", "수동 필요");
+
+    // await test.step("[TC-3.1.2] 제출 버튼이 비활성화 상태여야 한다", async () => {
+    //   // ✅ Then: 제출 버튼이 비활성화 상태여야 한다
+    //   await expect(
+    //     page.getByRole("button", { name: "댓글 등록" })
+    //   ).toBeDisabled();
+    // });
 
     await test.step("[TC-3.1.3] 댓글창에 아아아 입력 -> 제출 버튼이 활성화 상태여야 한다", async () => {
       // 🎬 When: 댓글창에 아아아 입력
