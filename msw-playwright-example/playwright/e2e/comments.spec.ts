@@ -1,5 +1,5 @@
 import { expect } from "@playwright/test";
-import { test } from "../setup";
+import { scenarioTest as test } from "../fixture";
 
 test.describe("댓글 작성", () => {
   test.beforeEach(async ({ page }) => {

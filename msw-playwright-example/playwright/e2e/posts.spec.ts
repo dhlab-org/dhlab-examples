@@ -1,8 +1,7 @@
-import { describe } from "node:test";
 import { expect } from "@playwright/test";
-import { test } from "../setup";
+import { scenarioTest as test } from "../fixture";
 
-describe("게시글 목록", () => {
+test.describe("게시글 목록", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("http://localhost:5173/login");
     await page

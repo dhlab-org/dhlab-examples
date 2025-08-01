@@ -1,6 +1,7 @@
 */.auth/*
 test-results/*
 reporters
+e2e-autogen-report.json
 
 # Logs
 logs

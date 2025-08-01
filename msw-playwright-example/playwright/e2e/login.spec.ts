@@ -1,5 +1,5 @@
 import { expect } from "@playwright/test";
-import { test } from "../setup";
+import { scenarioTest as test } from "../fixture";
 
 test("[TC-1.1] 유저 ID를 입력하면 로그인되어야 한다", async ({ page }) => {
   await test.step("[TC-1.1.1] 로그인 페이지 로드 -> id 입력 폼이 표시되어야 한다", async () => {

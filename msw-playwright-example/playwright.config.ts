@@ -1,5 +1,10 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const reporterPath = new URL(
+  "./node_modules/@dhlab/e2e-autogen/dist/packages/playwright/reporter.js",
+  import.meta.url
+).pathname;
+
 export default defineConfig({
   testDir: "./playwright/e2e",
   fullyParallel: true,
@@ -7,7 +12,12 @@ export default defineConfig({
   workers: undefined,
   reporter: [
     ["html", { outputFolder: "./playwright/reporters" }],
-    ["json", { outputFile: "./playwright/reporters/results.json" }],
+    [
+      reporterPath,
+      {
+        outputFile: "./playwright/e2e-autogen-report.json",
+      },
+    ],
   ],
   use: {
     baseURL: "http://localhost:5173",
