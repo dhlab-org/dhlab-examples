@@ -30,6 +30,7 @@ node_modules/
 .yarn/build-state.yml     
 .yarn/unplugged/          
 .yarn/cache/*.tmp.*  
+.yarn/cache/@dhlab-api-recorder-*
 
 !.yarn/cache/**             
 !.yarn/patches/**           

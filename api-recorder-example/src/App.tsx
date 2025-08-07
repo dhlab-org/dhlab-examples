@@ -1,31 +1,19 @@
-import './App.css';
-import { TestSocketButton } from './socketio/test-socket-button';
+import { ApiRecorderDevtools } from '@dhlab/api-recorder';
+import { FetchTest } from './test-cases/fetch';
+import { SocketIOTest } from './test-cases/socketio';
+import { XhrTest } from './test-cases/xhr';
 
 function App() {
   return (
     <>
-      <h1>Api-recorder 테스트</h1>
-      <TestSocketButton />
-      <TestHttpFetchButton />
+      <div style={{ display: 'flex', gap: '10px', marginBottom: '200px' }}>
+        <SocketIOTest />
+        <FetchTest />
+        <XhrTest />
+      </div>
+      <ApiRecorderDevtools />
     </>
   );
 }
 
 export default App;
-
-const TestHttpFetchButton = () => {
-  return (
-    <button
-      type="button"
-      onClick={() => {
-        fetch('https://jsonplaceholder.typicode.com/posts/1')
-          .then(res => res.json())
-          .then(data => {
-            console.log(data);
-          });
-      }}
-    >
-      Test Http Fetch
-    </button>
-  );
-};
